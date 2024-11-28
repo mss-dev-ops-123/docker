@@ -1,0 +1,100 @@
+Docker Containers Overview
+A Docker container is a lightweight, standalone, and executable package that includes everything needed to run an application, such as code, runtime, libraries, and dependencies. Containers are based on Docker images.
+
+Common Docker Container Commands:
+1. List Running Containers
+bash
+Copy code
+docker ps
+Shows only active containers.
+2. List All Containers (Running & Stopped)
+bash
+Copy code
+docker ps -a
+Displays all containers, including stopped ones.
+3. Run a New Container
+bash
+Copy code
+docker run -d -p <host-port>:<container-port> --name <container-name> <image>
+Example:
+bash
+Copy code
+docker run -d -p 8080:80 --name my-nginx nginx
+Flags:
+-d: Run the container in detached mode (background).
+-p: Port mapping (host:container).
+--name: Assign a custom name to the container.
+4. Stop a Running Container
+bash
+Copy code
+docker stop <container-id or name>
+Example:
+bash
+Copy code
+docker stop my-nginx
+5. Start a Stopped Container
+bash
+Copy code
+docker start <container-id or name>
+6. Remove a Container
+bash
+Copy code
+docker rm <container-id or name>
+Example:
+bash
+Copy code
+docker rm my-nginx
+7. View Logs from a Container
+bash
+Copy code
+docker logs <container-id or name>
+Example:
+bash
+Copy code
+docker logs my-nginx
+8. Execute a Command Inside a Running Container
+bash
+Copy code
+docker exec -it <container-id or name> <command>
+Example (to open a bash shell inside the container):
+bash
+Copy code
+docker exec -it my-nginx bash
+9. Remove All Stopped Containers
+bash
+Copy code
+docker container prune
+Removes all containers that are not running.
+10. Inspect Container Details
+bash
+Copy code
+docker inspect <container-id or name>
+Provides detailed information about the container's configuration.
+Example Workflow:
+Pull an image and run a container:
+bash
+Copy code
+docker pull nginx
+docker run -d -p 8080:80 nginx
+Check running containers:
+bash
+Copy code
+docker ps
+Stop and remove the container:
+bash
+Copy code
+docker stop <container-id>
+docker rm <container-id>
+Let me know if you need help with any specific container tasks! 😊
+
+
+
+
+
+
+
+
+
+
+
+Ch
